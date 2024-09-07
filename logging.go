@@ -17,7 +17,7 @@ func NewLoggingService(next Service, logger *log.Logger) Service {
 
 func (s *LoggingService) GetFact(ctx context.Context) (fact *Fact, err error) {
 	defer func(start time.Time) {
-		s.logger.Printf("fact=%v err=%v took=%v", fact, err, time.Since(start))
+		s.logger.Printf("fact=%s err=%v took=%v\n", fact.Fact, err, time.Since(start))
 	}(time.Now())
 
 	return s.next.GetFact(ctx)

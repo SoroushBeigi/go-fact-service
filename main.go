@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	logger := log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
+	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime|log.Lshortfile)
 	svc := NewFactService("https://catfact.ninja/fact")
 	svc = NewLoggingService(svc, logger)
 
