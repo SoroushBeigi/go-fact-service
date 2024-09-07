@@ -11,10 +11,9 @@ func main() {
 	svc := NewFactService("https://catfact.ninja/fact")
 	svc = NewLoggingService(svc, logger)
 
-	fact, err := svc.GetFact(context.TODO())
+	_, err := svc.GetFact(context.TODO())
 	if err != nil {
 		logger.Fatal(err)
 	}
-	logger.Printf("%+v\n", fact)
 
 }

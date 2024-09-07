@@ -1,5 +1,5 @@
 build:
-	go build -o bin.fact
+	@go build -o bin/fact
 
 run: build
 	./bin/fact
